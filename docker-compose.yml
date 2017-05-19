@@ -28,6 +28,8 @@ services:
     container_name: hive-server
     env_file:
       - ./hadoop-hive.env
+    volumes:
+      - ../sampledata:/sampledata
     environment:
       - "HIVE_CORE_CONF_javax_jdo_option_ConnectionURL=jdbc:postgresql://hive-metastore/metastore"
     ports:
